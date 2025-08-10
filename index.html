@@ -17,9 +17,32 @@
     .bg-gray-150 {
       background-color: #f5f5f5; /* A light grey */
     }
+    /* Fade-out animation for welcome modal */
+    .fade-out {
+      animation: fadeOut 0.5s forwards;
+    }
+    @keyframes fadeOut {
+      to {
+        opacity: 0;
+        transform: scale(0.95);
+        pointer-events: none;
+      }
+    }
   </style>
 </head>
 <body class="bg-gray-150 dark:bg-black text-gray-800 dark:text-gray-300 font-sans transition-colors duration-300" id="body">
+  <!-- Welcome Modal Overlay -->
+  <div id="welcomeModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70">
+    <div class="bg-white dark:bg-gray-900 rounded-lg shadow-lg p-8 max-w-md w-full text-center relative border border-blue-700">
+      <button id="closeWelcome" class="absolute top-3 right-3 text-gray-500 hover:text-blue-700 dark:hover:text-blue-300 text-2xl font-bold">&times;</button>
+      <h2 class="text-3xl font-bold text-blue-800 dark:text-blue-300 mb-4">Welcome to Cyber Sentinel!</h2>
+      <p class="mb-4 text-gray-700 dark:text-gray-200">
+        Your beginner-friendly guide to cybersecurity.<br>
+        Explore SSH, SQL, and CTFs with easy explanations and practical tips.
+      </p>
+
+    </div>
+  </div>
   <header class="bg-blue-900 dark:bg-gray-800 text-white p-6 relative">
     <div class="flex justify-between items-center">
       <div>
@@ -31,13 +54,16 @@
       </button>
     </div>
   </header>
-<!-- Manu -->
-  <nav class="bg-white dark:bg-gray-700 dark:text-white shadow p-4 flex gap-4 sticky top-0 z-50 transition-colors duration-300">
-      <img src="logo.png" alt="Cyber Sentinel Logo" class="h-16 w-auto hover:scale-110 transition-transform duration-300">
-  <div class="flex gap-4"></div>
-    <a href="#ssh" class="text-blue-600 dark:text-blue-300 hover:scale-110 transition-transform duration-300">SSH</a>
-    <a href="#sql" class="text-blue-600 dark:text-blue-300 hover:scale-110 transition-transform duration-300">SQL</a>
-    <a href="#picoctf" class="text-blue-600 dark:text-blue-300 hover:scale-110 transition-transform duration-300">picoCTF</a>
+  <!-- Manu -->
+  <!-- Responsive Manu/Nav Bar -->
+  <nav id="mainNav" class="bg-white dark:bg-gray-700 dark:text-white shadow p-4 flex gap-4 z-50 transition-all duration-300 justify-center"
+    style="position: sticky; top: 0; left: 0; right: 0;">
+    <img src="logo.png" alt="Cyber Sentinel Logo" class="h-16 w-auto hover:scale-110 transition-transform duration-300 hidden" id="navLogo">
+    <div id="navLinks" class="flex gap-2 md:gap-4">
+      <a href="#ssh" class="nav-link text-blue-600 dark:text-blue-300 px-2 py-1 rounded transition-all duration-200 text-center">SSH</a>
+      <a href="#sql" class="nav-link text-blue-600 dark:text-blue-300 px-2 py-1 rounded transition-all duration-200 text-center">SQL</a>
+      <a href="#picoctf" class="nav-link text-blue-600 dark:text-blue-300 px-2 py-1 rounded transition-all duration-200 text-center">PicoCTF</a>
+      <a href="#virustotal" class="nav-link text-blue-600 dark:text-blue-300 px-2 py-1 rounded transition-all duration-200 text-center">Virustotal</a>
     </div>
   </nav>
 <!-- ssh topic -->
@@ -398,6 +424,29 @@
           <li>Forensics</li>
         </ul>
       </section>
+      <section id="virustotal">
+        <main class="p-6 space-y-12 flex justify-center">
+        <div class="text-center">
+           <div class="w-full max-w-4xl bg-white dark:bg-gray-200 rounded-lg shadow-lg p-6 border border-gray-300 dark:border-gray-700">
+          <h1 class="text-3xl font-semibold text-blue-800 dark:text-blue-300"><b>Virustotal?</b><br></h1>
+          <p>VirusTotal is a free online service that analyzes suspicious files, URLs, domains, and IP addresses to detect malware using multiple antivirus engines and online scan services.</p>
+        </div>
+      </div>
+</section>
+         <ul class="list-disc list-inside">
+           <li><strong>How does it work?</strong></li>
+           <ul class="list-disc list-inside ml-6 text-sm text-gray-700">
+          <li><strong>1.You Upload or Submit:</strong>You find a suspicious file, a strange link (URL), or an IP address that you're worried about. You go to the VirusTotal website and upload the file or paste the link/address into the search bar.</li>
+          <li><strong>2.VirusTotal's "Scan" Begins:</strong> Instead of using just one antivirus program, VirusTotal sends your submission to a huge number of different security companies. It's like asking dozens of experts for their opinion at the same time.</li>
+            <li><strong>3.The Experts Report Back:</strong>Each of these antivirus engines and security services analyzes your submission. They check it against their own databases of known malware and malicious activity.</li>
+            <li><strong>4.You See the Results:</strong>VirusTotal then compiles all of these individual reports into one easy-to-read page. It shows you how many of the different companies flagged your file or link as dangerous. For example, you might see "5 out of 70" engines detected something malicious.</li>
+            <li><strong>5.Bonus Information:</strong>VirusTotal also provides extra context, like when the file was first seen, its "fingerprint" (hash), and what other people have said about it. This helps you get a better overall picture of the threat.</li>
+           <ul class="list-decimal list-inside ml-4">
+        <h3 class="mt-4 font-semibold">Use virustotal</h3>
+        <ul class="list-disc list-inside">
+          <li>virustotal.(<a class="text-blue-600 underline" href="https://www.virustotal.com/gui/home/upload">virustotal.com</a>)</li>
+        </ul>
+      </section>
     </div>
   </main>
 
@@ -413,6 +462,150 @@
       body.classList.toggle('dark');
       toggle.textContent = body.classList.contains('dark') ? '☀️ Light' : '🌙 Dark';
     });
+
+    // Welcome Modal Logic
+    const welcomeModal = document.getElementById('welcomeModal');
+    const closeWelcome = document.getElementById('closeWelcome');
+    closeWelcome.addEventListener('click', () => {
+      welcomeModal.classList.add('fade-out');
+      setTimeout(() => {
+        welcomeModal.style.display = 'none';
+        welcomeModal.classList.remove('fade-out');
+      }, 500);
+    });
+    // Optional: Close modal with Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        welcomeModal.classList.add('fade-out');
+        setTimeout(() => {
+          welcomeModal.style.display = 'none';
+          welcomeModal.classList.remove('fade-out');
+        }, 500);
+      }
+    });
   </script>
+  <style>
+  /* Manu bar compact style */
+  #mainNav.compact {
+    justify-content: center !important;
+    background: rgba(30, 58, 138, 0.95);
+    box-shadow: 0 4px 24px rgba(30,58,138,0.10);
+    border-radius: 9999px;
+    width: fit-content;
+    min-width: 240px;
+    max-width: 80vw;
+    margin: 0.5rem auto 0 auto;
+    padding: 0.4rem 1.5rem;
+    left: 0;
+    right: 0;
+    position: relative;
+    top: 0;
+    z-index: 60;
+    transition: 
+      border-radius 0.5s cubic-bezier(.4,0,.2,1),
+      width 0.5s cubic-bezier(.4,0,.2,1),
+      margin 0.5s cubic-bezier(.4,0,.2,1),
+      background 0.5s cubic-bezier(.4,0,.2,1),
+      box-shadow 0.5s cubic-bezier(.4,0,.2,1),
+      left 0.5s cubic-bezier(.4,0,.2,1),
+      right 0.5s cubic-bezier(.4,0,.2,1),
+      top 0.5s cubic-bezier(.4,0,.2,1),
+      padding 0.5s cubic-bezier(.4,0,.2,1),
+      justify-content 0.5s cubic-bezier(.4,0,.2,1);
+  }
+  #mainNav.compact #navLinks {
+    gap: 0.4rem;
+  }
+  #mainNav.compact .nav-link {
+    background: #fff;
+    color: #1e3a8a !important;
+    border-radius: 9999px;
+    font-weight: 600;
+    min-width: 44px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.35rem;
+    padding-bottom: 0.35rem;
+    font-size: 1rem;
+    box-shadow: 0 2px 8px rgba(30,58,138,0.08);
+    transition: background 0.2s, color 0.2s;
+  }
+  #mainNav.compact .nav-link:hover {
+    background: #2563eb;
+    color: #fff !important;
+  }
+  #mainNav.compact #navLogo {
+    display: none !important;
+  }
+  /* Spread out style (default, long elliptical wave, smaller and symmetrical) */
+  #mainNav {
+    border-radius: 9999px;
+    margin: 0.5rem auto 0 auto;
+    width: 70vw;
+    max-width: 900px;
+    min-width: 240px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    justify-content: flex-start;
+    background: linear-gradient(90deg, #1e3a8a 0%, #2563eb 100%);
+    box-shadow: 0 4px 24px rgba(30,58,138,0.10);
+    padding: 0.4rem 1.5rem;
+    z-index: 60;
+    transition: 
+      border-radius 0.5s cubic-bezier(.4,0,.2,1),
+      width 0.5s cubic-bezier(.4,0,.2,1),
+      margin 0.5s cubic-bezier(.4,0,.2,1),
+      background 0.5s cubic-bezier(.4,0,.2,1),
+      box-shadow 0.5s cubic-bezier(.4,0,.2,1),
+      left 0.5s cubic-bezier(.4,0,.2,1),
+      right 0.5s cubic-bezier(.4,0,.2,1),
+      top 0.5s cubic-bezier(.4,0,.2,1),
+      padding 0.5s cubic-bezier(.4,0,.2,1),
+      justify-content 0.5s cubic-bezier(.4,0,.2,1);
+  }
+  #mainNav #navLogo {
+    display: block;
+  }
+  #mainNav .nav-link {
+    background: transparent;
+    color: #fff !important;
+    border-radius: 9999px;
+    font-weight: 500;
+    min-width: 44px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.35rem;
+    padding-bottom: 0.35rem;
+    font-size: 1rem;
+    transition: background 0.2s, color 0.2s;
+  }
+  #mainNav .nav-link:hover {
+    background: rgba(255,255,255,0.15);
+    color: #fff !important;
+  }
+  #mainNav .nav-link:active {
+    background: rgba(255,255,255,0.25);
+  }
+</style>
+<script>
+  // Manu bar scroll effect
+  const mainNav = document.getElementById('mainNav');
+  function updateNavBar() {
+    if (window.scrollY < 10) {
+      mainNav.classList.add('compact');
+      mainNav.style.top = "0";
+      mainNav.style.position = "relative";
+    } else {
+      mainNav.classList.remove('compact');
+      mainNav.style.top = "0";
+      mainNav.style.position = "sticky";
+    }
+  }
+  // Initial state
+  updateNavBar();
+  window.addEventListener('scroll', updateNavBar);
+</script>
 </body>
 </html>
