@@ -2,7 +2,7 @@
 
 An educational website that introduces beginners to cybersecurity topics such as **SSH**, **SQL**, and **picoCTF** in an easy-to-follow and visual format.
 
-## 🌐 Live Demo
+## 🌐 Live Demo[
 https://myduckryu.github.io/cyber-sentinel-guide/
 
 ## 🧰 Features
