@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cyber Sentinel - A Beginner’s Guide to Cybersecurity</title>
+   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Enable dark mode support via class strategy
+    tailwind.config = {
+      darkMode: 'class'
+    };
+  </script>
+  <style>
+    html {scroll-behavior: smooth;
+    }
+    /* Custom background color */
+    .bg-gray-150 {
+      background-color: #f5f5f5; /* A light grey */
+    }
+    /* Fade-out animation for welcome modal */
+    .fade-out {
+      animation: fadeOut 0.5s forwards;
+    }
+    @keyframes fadeOut {
+      to {
+        opacity: 0;
+        transform: scale(0.95);
+        pointer-events: none;
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-150 dark:bg-black text-gray-800 dark:text-gray-300 font-sans transition-colors duration-300" id="body">
+  <!-- Welcome Modal Overlay -->
+  <div id="welcomeModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70">
+    <div class="bg-white dark:bg-gray-900 rounded-lg shadow-lg p-8 max-w-md w-full text-center relative border border-blue-700">
+      <button id="closeWelcome" class="absolute top-3 right-3 text-gray-500 hover:text-blue-700 dark:hover:text-blue-300 text-2xl font-bold">&times;</button>
+      <h2 class="text-3xl font-bold text-blue-800 dark:text-blue-300 mb-4">Welcome to Cyber Sentinel!</h2>
+      <p class="mb-4 text-gray-700 dark:text-gray-200">
+        Your beginner-friendly guide to cybersecurity.<br>
+        Explore SSH, SQL, and CTFs with easy explanations and practical tips.
+      </p>
+
+    </div>
+  </div>
+  <header class="bg-blue-900 dark:bg-gray-800 text-white p-6 relative">
+    <div class="flex justify-between items-center">
+      <div>
+        <h1 class="text-4xl font-bold">Cyber Sentinel</h1>
+        <p class="text-lg mt-2 text-gray-300">An educational website offering cybersecurity resources and tutorials for beginners</p>
+      </div>
+      <button id="toggleDark" class="bg-white dark:bg-gray-700 text-blue-900 dark:text-white px-3 py-1 rounded hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-200">
+        🌙 Dark
+      </button>
+    </div>
+  </header>
+  <!-- Manu -->
+  <!-- Responsive Manu/Nav Bar -->
+  <nav id="mainNav" class="bg-white dark:bg-gray-700 dark:text-white shadow p-4 flex gap-4 z-50 transition-all duration-300 justify-center"
+    style="position: sticky; top: 0; left: 0; right: 0;">
+    <img src="logo.png" alt="Cyber Sentinel Logo" class="h-16 w-auto hover:scale-110 transition-transform duration-300 hidden" id="navLogo">
+    <div id="navLinks" class="flex gap-2 md:gap-4">
+      <a href="#ssh" class="nav-link text-blue-600 dark:text-blue-300 px-2 py-1 rounded transition-all duration-200 text-center">SSH</a>
+      <a href="#sql" class="nav-link text-blue-600 dark:text-blue-300 px-2 py-1 rounded transition-all duration-200 text-center">SQL</a>
+      <a href="#picoctf" class="nav-link text-blue-600 dark:text-blue-300 px-2 py-1 rounded transition-all duration-200 text-center">PicoCTF</a>
+      <a href="#virustotal" class="nav-link text-blue-600 dark:text-blue-300 px-2 py-1 rounded transition-all duration-200 text-center">Virustotal</a>
+    </div>
+  </nav>
+<!-- ssh topic -->
+  <main class="p-6 space-y-12 flex justify-center">
+    <div class="w-full max-w-4xl bg-white dark:bg-gray-200 rounded-lg shadow-lg p-6 border border-gray-300 dark:border-gray-700">
+      <section id="ssh">
+        <div class="text-center">
+           <div class="w-full max-w-4xl bg-white dark:bg-gray-200 rounded-lg shadow-lg p-6 border border-gray-300 dark:border-gray-700">
+          <h1 class="text-3xl font-semibold text-blue-800 dark:text-blue-300"><b>Elaborating on SSH</b><br></h1>
+          <p>SSH (Secure Shell) ssh (SSH client) is a program for logging into a remote machine and for executing commands on a remote machine It is intended to replace rlogin and rsh, and provide secure encrypted communications between two untrusted hosts over an insecure network X11 connections and arbitrary TCP ports can also be forwarded over the secure channel
+          ssh connects and logs into the specified hostname (with optional user name) The user must prove his/her identity to the remote machine using one of several methods depending on the protocol version used (see below)
+          If command is specified, it is executed on the remote host instead of a login shell.</p>
+        </div>
+      </div>
+<!-- explain SQL -->
+        <h2 class="mt-4 font-semibold text-gray-500"><strong>Key Components of SSH 🔑</strong></h2>
+        <ul class="list-disc list-inside">
+          <li><strong>SSH Client</strong>: This is the software on your computer that you use to start the secret tunnel.</li>
+          <li><strong>SSH Server</strong>: This is the software running on the remote computer that waits for your tunnel requests and lets you in.</li>
+        </ul>
+        <h2 class="mt-4 font-semibold text-gray-500"><strong>The Tools Explained for Beginners 🧰</strong></h2>
+        <ul class="list-disc list-inside">
+          <li>
+<!-- Tool 1: Termius -->
+            <strong>1. Termius (Windows, Mac, Android)</strong>
+            <ul class="list-disc list-inside ml-6 text-sm text-gray-700">
+              <li>
+                <strong>What it is:</strong>Termius is like a friendly, modern dashboard for managing all your secret tunnels (SSH connections). It has a graphical user interface (GUI), meaning you click buttons and type into boxes, which is usually easier for beginners.
+              </li>
+              <p><strong>How to use it (Simplified)</strong></p>
+              <ul class="list-decimal list-inside ml-4"></ul>
+                <li>1.Install it: Download and install Termius on your computer or phone.</li>
+                <li>2.Add a New Host: In Termius, you'll see a button or option to "Add New Host" or "New Connection.</li>
+                <li>3.Enter Server Details: Type in the address of the remote computer (like a website address, e.g., my-server.com or an IP address like 192.168.1.100) and the username you want to log in as (e.g., admin or myuser)</li>
+                <li>4.Connect! Click "Connect" or "Save & Connect." Termius will then prompt you for a password (if you use one) or use a "key" (more on that later).</li>
+                <li>5.You're In: Once connected, you'll see a black screen where you can type commands to control the remote computer.</li>
+            </ul>
+          </li>
+        </ul>
+        </li>
+ <li>
+          <strong>Why it's good for beginners:</strong>It's visually easy to understand, helps you save your connections, and even lets you sync them across your devices!
+
+        </li>
+
+        <li>
+<!-- Tool 2: Termius -->         
+          <strong>2. PuTTY (Windows)</strong>
+          <ul class="list-disc list-inside ml-6 text-sm text-gray-700">
+            <li>
+              <strong>What it is:</strong>PuTTY is a classic, straightforward SSH client specifically for Windows. It's also a GUI tool, so you interact with it by typing into fields and clicking buttons. It's often chosen because it's free and very reliable.
+            </li>
+              <p><strong>How to use it (Simplified)</strong></p>
+              <ul class="list-decimal list-inside ml-4"></ul>
+                <li>1.Download it: Get the PuTTY program from its official website. It's often just a single file.</li>
+                <li>2.Launch PuTTY: Open the downloaded PuTTY application.</li>
+                <li>3.Enter Server Details: In the "Host Name (or IP address)" box, type the address of your remote computer. The "Port" will usually be 22 (the standard SSH port).</li>
+                <li>4.Open: Click the "Open" button.</li>
+                <li>5.Login: A black window will pop up asking for your username and then your password.</li>
+                <li>6.You're In: After successfully entering your credentials, you'll be connected and can type commands.</li>
+            </ul>
+          </li>
+        </ul>
+        </li>
+ <li>
+          <strong>Why it's good for beginners (on Windows):</strong>It's simple, lightweight, and very commonly used, so many guides refer to it.
+        </li>
+
+        <li>
+<!-- Tool 3: Termius -->          
+          <strong>3. OpenSSH (Linux/macOS)</strong>
+          <ul class="list-disc list-inside ml-6 text-sm text-gray-700">
+            <li>
+              <strong>What it is:</strong>OpenSSH is the built-in, default SSH tool for Linux and macOS computers. Unlike Termius or PuTTY, it's primarily a command-line interface (CLI) tool. This means you type commands into a text-based window called the "Terminal" (or "Command Prompt" on Windows, if you've installed it there).
+            </li>
+              <p><strong>How to use it (Simplified)</strong></p>
+              <ul class="list-decimal list-inside ml-4"></ul>
+                <li>1.Open Terminal: On Linux or macOS, simply open the "Terminal" application.</li>
+                <li>2.Type the ssh command: To connect, you use the ssh command followed by the username and the server's address:</li>
+                <pre class="bg-gray-800 text-white p-4 rounded"><code>ssh your_username@server_address</code></pre>
+                 For example: ssh john.doe@mycloudserver.net</li>
+                <li>3.Enter Server Details: In the "Host Name (or IP address)" box, type the address of your remote computer. The "Port" will usually be 22 (the standard SSH port).</li>
+                <li>4You're In: Once authenticated, you'll be logged into the remote server and can type commands directly into your Terminal.</li>
+            </ul>
+          </li>
+        </ul>
+        </li>
+        <li>
+          <strong>Why it's good (for everyone, especially advanced users):</strong>It's powerful, flexible, built-in, and the industry standard. Learning to use it via the command line is a fundamental skill for anyone working with remote servers.
+        </li>
+        <!-- key  --> 
+        <h2 class="mt-4 font-semibold text-gray-500"><strong>Here's a breakdown of its key features and options 🔒</strong></h2>
+        <ul class="list-disc list-inside">
+          <strong>1. Basic SSH Connection & Options</strong>
+            <ul class="list-disc list-inside ml-6 text-sm text-gray-700">
+              At its core, ssh connects you to a remote machine.
+              <p><strong>How to connect</strong></p>
+              <ul class="list-decimal list-inside ml-4">
+        <pre class="bg-gray-800 text-white p-4 rounded"><code>ssh username@hostname_or_IP</code></pre>
+         <li>username: Your user account on the remote machine.</li>
+         <li>hostname_or_IP: The domain name (e.g., example.com) or IP address (e.g., 192.168.1.100) of the remote machine.</li>
+              </ul>
+          <strong>Example:</strong>ssh user@my-server.com
+          <li>-p port<strong>(Specify Port):</strong>If the SSH server on the remote machine is not listening on the default port (22), you can specify it.</li>
+              <ul class="list-decimal list-inside ml-4">
+         <strong>Example:</strong>ssh -p 2222 user@my-server.com (Connects to port 2222)
+              </ul>
+          <li>-l login_name<strong>(Specify Username):</strong>An alternative way to specify the username.</li>
+          <ul class="list-decimal list-inside ml-4">
+         <strong>Example:</strong>ssh -l user my-server.com (Same as ssh user@my-server.com)
+              </ul>
+           <li>-v<strong>(Verbose Mode):</strong> Extremely useful for troubleshooting! It makes ssh print out detailed messages about what it's doing during the connection process. You can use -vv or -vvv for even more detail.
+</li>
+          <ul class="list-decimal list-inside ml-4">
+         <strong>Example:</strong>ssh -v user@my-server.com
+              </ul>
+          <li>-f<strong> (Background before command):</strong> Makes ssh go to the background before running a command on the remote server. This is useful if you want to start a remote process but don't want to keep your local terminal open for it. Often used with -n.</li>
+          <ul class="list-decimal list-inside ml-4">
+         <strong>Example:</strong>ssh -f myuser@remote.com "firefox &" (Starts Firefox on the remote machine and sends SSH to the background)
+              </ul>
+          <li>-n<strong>(No standard input):</strong>Prevents ssh from reading from standard input. This is important when ssh is run in the background, so it doesn't wait for your input.
+
+</li>
+    </ul>
+    <!-- Tool 2:  --> 
+              <strong>2. Authentication Methods</strong>
+            <ul class="list-disc list-inside ml-6 text-sm text-gray-700">
+              SSH uses various ways to verify your identity to the server. The most common and secure methods for beginners are Public Key Authentication and Password Authentication.
+          <li><strong>Password Authentication:</strong>The simplest method. You provide your password for the remote user. All communication, including the password, is encrypted.</li>
+          <li><strong>Public Key Authentication (Recommended):</strong>This is more secure and convenient for regular use.</li>
+      <ul class="list-disc list-inside ml-6 text-sm text-gray-700">
+          <li><strong>You generate a pair of keys:</strong>a public key and a private key.</li>
+          <li><strong>The public key</strong> is stored on the remote server (in ~/.ssh/authorized_keys in your home directory).</li>
+          <li><strong>The private key</strong>stays securely on your local computer (e.g., ~/.ssh/id_rsa).</li>
+          <li><strong>When you connect,</strong>ssh uses your private key to prove your identity without sending your password over the network.</li>
+          <li><strong>How to generate keys:</strong>ssh-keygen (just type this in your terminal and follow the prompts).</li>
+          <li><strong>How to use a specific key:</strong>ssh -i ~/.ssh/my_custom_key user@my-server.com</li>
+        </ul>
+<li><strong>Authentication Agent</strong>(ssh-agent & -A):</li>
+<ul class="list-disc list-inside ml-6 text-sm text-gray-700">
+          <li>ssh-agent is a program that holds your private keys in memory so you don't have to type your passphrase every time you use them.</li>
+          <li>-A<strong>(Enable Agent Forwarding):</strong>This allows you to use your local ssh-agent keys when connecting from the remote server to another server. Use with caution, as it can be a security risk if the remote server is compromised.</li>
+          <li><strong>Example:</strong>ssh -A user@first-server (Now, from first-server, you can ssh to second-server using your local keys without re-entering passphrases).</li>
+            </ul>
+          </ul>
+<!-- Tool 3:   --> 
+ <strong>3. Checking Server Identity (known_hosts)</strong>
+            <ul class="list-disc list-inside ml-6 text-sm text-gray-700">
+             When you connect to an SSH server for the first time, ssh will show you its "fingerprint" and ask if you want to accept it.
+          <li><strong>known_hosts:</strong> Stores server "fingerprints" to verify you're connecting to the right machine.</li>
+          <li><strong>Security:</strong>If a fingerprint changes, ssh warns you – a sign of a potential attack.</li>
+            </ul>
+<!-- Tool 4:   -->
+  <strong>4. Special Session Controls (Escape Characters)</strong>
+            <ul class="list-disc list-inside ml-6 text-sm text-gray-700">
+             While connected, type ~ (tilde) at the beginning of a new line, followed by:
+          <li><strong>~.:</strong>Disconnect immediately.</li>
+          <li><strong>~?:</strong>Show all escape options.</li>
+            </ul>         
+<!-- Tool 5:   -->
+   <strong>5. Secure Data Tunnels (Port Forwarding)</strong>
+            <ul class="list-disc list-inside ml-6 text-sm text-gray-700">
+             SSH can "tunnel" network traffic securely.
+          <li>-L local_port:remote_host:remote_port<strong>(Local Forwarding):</strong>Access a service on the remote network through a local port on your machine.</li>
+          <ul class="list-disc list-inside ml-6 text-sm text-gray-700">
+            <li><strong>Example: </strong>ssh -L 8080:localhost:80 web.example.com (Access web.example.com's port 80 via your localhost:8080).</li>
+          </ul>
+          <li>-D local_port<strong>(Dynamic Forwarding / SOCKS Proxy):</strong> Turn your SSH client into a SOCKS proxy. All your selected application traffic goes through the SSH tunnel.</li>
+          <ul class="list-disc list-inside ml-6 text-sm text-gray-700">
+            <li><strong>Example: </strong>ssh -D 8080 user@proxy-server.com (Browse securely via proxy-server.com).</li>
+          </ul>
+            </ul>         
+<!-- Tool 6:   -->
+     <strong>6. Running Graphical Apps Remotely (X11 Forwarding)</strong>
+            <ul class="list-disc list-inside ml-6 text-sm text-gray-700">
+             X11 is the system used by many Unix-like operating systems (like Linux) for graphical user interfaces (GUIs).
+          <li>-X: Show remote graphical applications on your local desktop.</li>
+          <ul class="list-disc list-inside ml-6 text-sm text-gray-700">
+            <li><strong>Example: </strong>ssh -X user@remote-gui "firefox" (Run Firefox on the remote server, see it on your screen).</li>
+          </ul>
+          <li>-Y: A less secure version of -X, use only if you fully trust the server.
+</li>
+        </ul>
+<!-- Tool 7:   -->
+      <strong>7. Important SSH Files</strong>
+            <ul class="list-disc list-inside ml-6 text-sm text-gray-700">
+             Look in your ~/.ssh/ folder:
+          <li>-~/.ssh/config: Your personal settings for SSH (e.g., shorthand for servers).</li>
+          <li>~/.ssh/known_hosts: Saved server fingerprints.</li>
+          <li>~/.ssh/authorized_keys (on server): Where your public key goes so the server knows you're allowed to log in.</li>
+          <li>~/.ssh/id_rsa (etc.): Your private key (keep secret!).</li>
+       </ul>
+      <p>We recommend reading more from <a class="text-blue-600 underline" href="https://linux.die.net/man/1/ssh">ssh(1) - Linux man page</a></p>
+<br>
+      <section id="sql">
+        <main class="p-6 space-y-12 flex justify-center">
+        <div class="text-center">
+           <div class="w-full max-w-4xl bg-white dark:bg-gray-200 rounded-lg shadow-lg p-6 border border-gray-300 dark:border-gray-700">
+          <h1 class="text-3xl font-semibold text-blue-800 dark:text-blue-300"><b>What is SQL?</b><br></h1>
+          <p>Structured Query Language (SQL) is a programming language for storing and processing data in relational databases. Relational databases store data in tabular form with rows and columns representing different data categories and relationships between data values. SQL commands can be used to store, update, delete, search, and retrieve data from a database. Additionally, SQL can be used to maintain and optimize database performance.</p>
+        </div>
+      </div>
+</section>
+        <!-- explain ssh -->
+        <h2 class="mt-4 font-semibold text-gray-500"><strong>Key Components of SQL 🔑</strong></h2>
+        <ul class="list-disc list-inside">
+          <li><strong>SDatabase:</strong>A structured collection of data, like a digital filing cabinet.</li>
+          <li><strong>Table:</strong>Where data is actually stored within a database, organized into rows and columns (like a spreadsheet).</li>
+          <li><strong>Row (Record):</strong> A single entry or record in a table (e.g., one customer's details).</li>
+          <li><strong>Column (Field):</strong> A specific category of data in a table (e.g., "FirstName", "Email").</li>
+          <li><strong>Primary Key:</strong> A column (or set of columns) that uniquely identifies each row in a table.</li>
+          <li><strong>Foreign Key:</strong>A column that links rows between two tables, ensuring data integrity.</li>
+        </ul>
+        <h2 class="mt-4 font-semibold text-gray-500"><strong>The Tools Explained for Beginners 🧰</strong></h2>
+        <ul class="list-disc list-inside">
+          To write and run SQL, you typically use a Database Management System (DBMS) or a SQL Client.
+          <li>
+<!-- Tool 1: Termius -->
+            <strong>1. Online SQL Editors (No Installation Required!)</strong>
+            <ul class="list-disc list-inside ml-6 text-sm text-gray-700">
+              <li>
+                <strong>What it is:</strong> Web-based tools that let you write and execute SQL queries directly in your browser, often with sample data. Perfect for absolute beginners to practice without setting up a local database.
+              </li>
+              <p><strong>How to use it (Simplified)</strong></p>
+              <ul class="list-decimal list-inside ml-4"></ul>
+                <li>1.Visit Website: Go to a site like W3Schools SQL Editor or SQLBolt.</li>
+                <li>2.Type Query: Write your SQL command in the provided editor area.</li>
+                <li>3.Run: Click a "Run" or "Execute" button.</li>
+                <li>4.See Results: The results of your query (or an error message) will appear.</li>
+            </ul>
+          </li>
+        </ul>
+        </li>
+ <li>
+          <strong>Why it's good for beginners:</strong> Instant practice, zero setup, great for understanding syntax.
+
+        </li>
+
+        <li>
+<!-- Tool 2: Termius -->         
+          <strong>2. Desktop Database Tools (e.g., DBeaver, MySQL Workbench, pgAdmin)</strong>
+          <ul class="list-disc list-inside ml-6 text-sm text-gray-700">
+            <li>
+              <strong>What it is:</strong>Dedicated software installed on your computer to connect to, manage, and query various types of databases (MySQL, PostgreSQL, SQL Server, SQLite, etc.). They offer powerful features and a graphical interface.
+            </li>
+              <p><strong>How to use it (Simplified)</strong></p>
+              <ul class="list-decimal list-inside ml-4"></ul>
+                <li>Install: Download and install the tool (e.g., DBeaver).</li>
+                <li>2.Connect to Database: Set up a new connection by providing database server details (host, port, username, password). You might first need to install a local database server (e.g., SQLite, MySQL).</li>
+                <li>3.Open Query Editor: Find the SQL editor window within the tool.</li>
+                <li>4.Write & Run: Type your SQL queries and execute them.</li>
+                <li>5.View & Manage: See query results, browse table structures, and manage database objects.</li>
+            </ul>
+          </li>
+        </ul>
+        </li>
+ <li>
+          <strong>Why it's good for beginners (after basics):</strong>Provides a realistic environment for working with databases, handles larger projects, and offers visual management.
+        </li>
+
+        <li>
+<!-- Tool 3: Termius -->          
+          <strong>3.Command-Line Interface (CLI) (e.g., mysql client, psql client)</strong>
+          <ul class="list-disc list-inside ml-6 text-sm text-gray-700">
+            <li>
+              <strong>What it is:</strong>Text-based tools that come with database servers (e.g., MySQL, PostgreSQL). You interact by typing SQL commands directly into your terminal.
+            </li>
+              <p><strong>How to use it (Simplified)</strong></p>
+              <ul class="list-decimal list-inside ml-4"></ul>
+                <li>Open Terminal: Launch your computer's terminal or command prompt.</li>
+                <li>2.Connect: Type the client command (e.g., mysql -u user -p or psql -U user -d database_name).</li>
+                <li>3.Enter Password: Provide your database user password.</li>
+                <li>4.Type SQL: Once connected, type your SQL queries directly and press Enter.</li>
+            </ul>
+          </li>
+        </ul>
+        </li>
+        <li>
+          <strong>Why it's good (for everyone, especially advanced users):</strong>Powerful, efficient for quick tasks, and a fundamental skill for server administration.
+        </li>
+        <!-- key  --> 
+        <h2 class="mt-4 font-semibold text-gray-500"><strong>Key Features and Options 🔓</strong></h2>
+        <ul class="list-disc list-inside ml-6 text-sm text-gray-700">
+          SQL is primarily about CRUD operations (Create, Read, Update, Delete) on data
+          <li><strong>SELECT: </strong>Get data. SELECT * FROM Customers;</li>
+          <li><strong>INSERT INTO:</strong> Add data. INSERT INTO Products VALUES ('Monitor');</li>
+          <li><strong>UPDATE:</strong> Change data. UPDATE Users SET Email = 'new@example.com';</li>
+          <li><strong>DELETE FROM:</strong> Remove data (use with caution!). DELETE FROM Orders WHERE ID = 1;</li>
+          <li>WHERE<strong> Clause:</strong>Filters data (e.g., WHERE Age > 30).</li>
+          <li><strong>JOIN:</strong>Combines data from multiple tables.</li>
+    </ul>
+            <!-- key  --> 
+        <h2 class="mt-4 font-semibold text-gray-500"><strong>SQL Injection & Prevention 🛡️</strong></h2>
+        <ul class="list-disc list-inside ml-6 text-sm text-gray-700">
+         A critical security concern in SQL is SQL Injection.
+            <li>
+              <strong>What it is:</strong>A web security vulnerability where attackers insert malicious SQL code into input fields (e.g., login forms, search bars) to trick the database into executing unintended commands. This can lead to data theft, modification, or even database control.
+            </li>
+              <li><strong>Prevention (Most Important for Developers):</strong></li>
+              <ul class="list-decimal list-inside ml-4"></ul>
+                <li>Prepared Statements / Parameterized Queries: This is the primary and most effective defense. It separates the SQL code from user-provided data, so the database never mistakes user input for commands.</li>
+                <li>Input Validation: Strictly check and sanitize all user input, allowing only expected formats and content.</li>
+                <li>Least Privilege: Configure database user accounts with only the minimum necessary permissions.</li>
+            </ul>
+          </li>
+        </ul>
+        </li>
+ <li>
+          <strong>Learn More about Prevention:</strong>Consult resources like the OWASP SQL Injection Prevention Cheat Sheet and PortSwigger Web Security Academy for hands-on learning.
+        </li>
+    </ul>
+      <p>We recommend reading more from <a class="text-blue-600 underline" href="https://www.w3schools.com/sql/">w3schools - SQL</a></p>
+<br>
+</pre>
+
+
+      <section id="picoctf">
+              <section id="sql">
+        <main class="p-6 space-y-12 flex justify-center">
+        <div class="text-center">
+           <div class="w-full max-w-4xl bg-white dark:bg-gray-200 rounded-lg shadow-lg p-6 border border-gray-300 dark:border-gray-700">
+          <h1 class="text-3xl font-semibold text-blue-800 dark:text-blue-300"><b>What is picoCTF?</b><br></h1>
+          <p>Imagine you're a digital detective, and there are hidden "flags" (secret codes) spread across various challenges. Your job is to find these flags by solving cybersecurity puzzles. That's essentially what picoCTF is!</p>
+        </div>
+      </div>
+</section>
+         <ul class="list-disc list-inside">
+          <li><strong>What is a CTF?</strong>CTF stands for "Capture The Flag." In cybersecurity, CTFs are competitive games where participants (individuals or teams) solve various challenges to find hidden "flags." These flags are usually unique strings of text (e.g., picoCTF{th1s_is_4_fl4g}).</li>
+          <li><strong>What is picoCTF specifically?</strong>picoCTF is a free, online cybersecurity competition specifically designed for beginners. It's created by experts at Carnegie Mellon University (CMU) and is often used by high school and college students, but anyone interested in learning cybersecurity can participate.</li>
+          <li><strong>What's its purpose?</strong>The main goal of picoCTF is to teach cybersecurity skills in a fun, hands-on way. Instead of just reading textbooks, you get to apply concepts by solving real-world-like problems. It helps you explore different areas of cybersecurity.</li>
+           <li><strong>How does it work?</strong></li>
+           <ul class="list-disc list-inside ml-6 text-sm text-gray-700">
+          <li><strong>1.Challenges:</strong>You log into the picoCTF platform and see a list of challenges.</li>
+          <li><strong>2.Categories: </strong>Get data. SELECT * FROM Customers; Challenges are grouped into categories like:</li>
+           <ul class="list-decimal list-inside ml-4">
+                <li>Cryptography: Breaking codes.</li>
+                <li>Web Exploitation: Finding vulnerabilities in websites.</li>
+                <li>Forensics: Analyzing digital evidence.</li>
+                <li>Reverse Engineering: Understanding how software works.</li>
+                <li>Binary Exploitation (Pwn): Finding flaws in programs to take control.</li>
+                <li>General Skills: Basic command-line usage, scripting, and problem-solving.</li></ul>
+            <li><strong>3.Solving: </strong>Each challenge gives you a description and sometimes files or a link to a website. Your task is to use various tools and techniques to solve the puzzle.</li>
+            <li><strong>4.Finding the Flag: </strong>Once you solve a challenge, you'll uncover a specific string of text – that's the flag!</li>
+            <li><strong>5.Submitting: </strong> You submit the flag on the picoCTF platform to earn points.</li>
+            <li><strong>6.Learning: </strong>If you get stuck, picoCTF often provides hints or write-ups (solutions) from past competitions, which are excellent learning resources.</li>
+           <ul class="list-decimal list-inside ml-4">
+        <h3 class="mt-4 font-semibold">Things to prepare</h3>
+        <ul class="list-disc list-inside">
+          <li>picoCTF account(<a class="text-blue-600 underline" href="https://picoctf.org">picoctf.org</a>)</li>
+          <li>vscode(<a class="text-blue-600 underline" href="https://code.visualstudio.com/">visualstudio</a>)</li>
+          <li>Python, Wireshark, SSH, php,(Depends on the type of problem)</li>
+        </ul>
+        <h3 class="mt-4 font-semibold">Type of problem</h3>
+        <ul class="list-disc list-inside">
+          <li>Cryptography</li>
+          <li>Web Exploitation</li>
+          <li>Reverse Engineering</li>
+          <li>Forensics</li>
+        </ul>
+      </section>
+      <section id="virustotal">
+        <main class="p-6 space-y-12 flex justify-center">
+        <div class="text-center">
+           <div class="w-full max-w-4xl bg-white dark:bg-gray-200 rounded-lg shadow-lg p-6 border border-gray-300 dark:border-gray-700">
+          <h1 class="text-3xl font-semibold text-blue-800 dark:text-blue-300"><b>Virustotal?</b><br></h1>
+          <p>VirusTotal is a free online service that analyzes suspicious files, URLs, domains, and IP addresses to detect malware using multiple antivirus engines and online scan services.</p>
+        </div>
+      </div>
+</section>
+         <ul class="list-disc list-inside">
+           <li><strong>How does it work?</strong></li>
+           <ul class="list-disc list-inside ml-6 text-sm text-gray-700">
+          <li><strong>1.You Upload or Submit:</strong>You find a suspicious file, a strange link (URL), or an IP address that you're worried about. You go to the VirusTotal website and upload the file or paste the link/address into the search bar.</li>
+          <li><strong>2.VirusTotal's "Scan" Begins:</strong> Instead of using just one antivirus program, VirusTotal sends your submission to a huge number of different security companies. It's like asking dozens of experts for their opinion at the same time.</li>
+            <li><strong>3.The Experts Report Back:</strong>Each of these antivirus engines and security services analyzes your submission. They check it against their own databases of known malware and malicious activity.</li>
+            <li><strong>4.You See the Results:</strong>VirusTotal then compiles all of these individual reports into one easy-to-read page. It shows you how many of the different companies flagged your file or link as dangerous. For example, you might see "5 out of 70" engines detected something malicious.</li>
+            <li><strong>5.Bonus Information:</strong>VirusTotal also provides extra context, like when the file was first seen, its "fingerprint" (hash), and what other people have said about it. This helps you get a better overall picture of the threat.</li>
+           <ul class="list-decimal list-inside ml-4">
+        <h3 class="mt-4 font-semibold">Use virustotal</h3>
+        <ul class="list-disc list-inside">
+          <li>virustotal.(<a class="text-blue-600 underline" href="https://www.virustotal.com/gui/home/upload">virustotal.com</a>)</li>
+        </ul>
+      </section>
+    </div>
+  </main>
+
+  <footer class="bg-gray-200 dark:bg-gray-900 dark:text-white text-center text-sm p-4 transition-colors duration-300">
+    by Nohn | © 2025 SecureZone
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('toggleDark');
+    const body = document.getElementById('body');
+
+    toggle.addEventListener('click', () => {
+      body.classList.toggle('dark');
+      toggle.textContent = body.classList.contains('dark') ? '☀️ Light' : '🌙 Dark';
+    });
+
+    // Welcome Modal Logic
+    const welcomeModal = document.getElementById('welcomeModal');
+    const closeWelcome = document.getElementById('closeWelcome');
+    closeWelcome.addEventListener('click', () => {
+      welcomeModal.classList.add('fade-out');
+      setTimeout(() => {
+        welcomeModal.style.display = 'none';
+        welcomeModal.classList.remove('fade-out');
+      }, 500);
+    });
+    // Optional: Close modal with Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        welcomeModal.classList.add('fade-out');
+        setTimeout(() => {
+          welcomeModal.style.display = 'none';
+          welcomeModal.classList.remove('fade-out');
+        }, 500);
+      }
+    });
+  </script>
+  <style>
+  /* Manu bar compact style */
+  #mainNav.compact {
+    justify-content: center !important;
+    background: rgba(30, 58, 138, 0.95);
+    box-shadow: 0 4px 24px rgba(30,58,138,0.10);
+    border-radius: 9999px;
+    width: fit-content;
+    min-width: 240px;
+    max-width: 80vw;
+    margin: 0.5rem auto 0 auto;
+    padding: 0.4rem 1.5rem;
+    left: 0;
+    right: 0;
+    position: relative;
+    top: 0;
+    z-index: 60;
+    transition: 
+      border-radius 0.5s cubic-bezier(.4,0,.2,1),
+      width 0.5s cubic-bezier(.4,0,.2,1),
+      margin 0.5s cubic-bezier(.4,0,.2,1),
+      background 0.5s cubic-bezier(.4,0,.2,1),
+      box-shadow 0.5s cubic-bezier(.4,0,.2,1),
+      left 0.5s cubic-bezier(.4,0,.2,1),
+      right 0.5s cubic-bezier(.4,0,.2,1),
+      top 0.5s cubic-bezier(.4,0,.2,1),
+      padding 0.5s cubic-bezier(.4,0,.2,1),
+      justify-content 0.5s cubic-bezier(.4,0,.2,1);
+  }
+  #mainNav.compact #navLinks {
+    gap: 0.4rem;
+  }
+  #mainNav.compact .nav-link {
+    background: #fff;
+    color: #1e3a8a !important;
+    border-radius: 9999px;
+    font-weight: 600;
+    min-width: 44px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.35rem;
+    padding-bottom: 0.35rem;
+    font-size: 1rem;
+    box-shadow: 0 2px 8px rgba(30,58,138,0.08);
+    transition: background 0.2s, color 0.2s;
+  }
+  #mainNav.compact .nav-link:hover {
+    background: #2563eb;
+    color: #fff !important;
+  }
+  #mainNav.compact #navLogo {
+    display: none !important;
+  }
+  /* Spread out style (default, long elliptical wave, smaller and symmetrical) */
+  #mainNav {
+    border-radius: 9999px;
+    margin: 0.5rem auto 0 auto;
+    width: 70vw;
+    max-width: 900px;
+    min-width: 240px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    justify-content: flex-start;
+    background: linear-gradient(90deg, #1e3a8a 0%, #2563eb 100%);
+    box-shadow: 0 4px 24px rgba(30,58,138,0.10);
+    padding: 0.4rem 1.5rem;
+    z-index: 60;
+    transition: 
+      border-radius 0.5s cubic-bezier(.4,0,.2,1),
+      width 0.5s cubic-bezier(.4,0,.2,1),
+      margin 0.5s cubic-bezier(.4,0,.2,1),
+      background 0.5s cubic-bezier(.4,0,.2,1),
+      box-shadow 0.5s cubic-bezier(.4,0,.2,1),
+      left 0.5s cubic-bezier(.4,0,.2,1),
+      right 0.5s cubic-bezier(.4,0,.2,1),
+      top 0.5s cubic-bezier(.4,0,.2,1),
+      padding 0.5s cubic-bezier(.4,0,.2,1),
+      justify-content 0.5s cubic-bezier(.4,0,.2,1);
+  }
+  #mainNav #navLogo {
+    display: block;
+  }
+  #mainNav .nav-link {
+    background: transparent;
+    color: #fff !important;
+    border-radius: 9999px;
+    font-weight: 500;
+    min-width: 44px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.35rem;
+    padding-bottom: 0.35rem;
+    font-size: 1rem;
+    transition: background 0.2s, color 0.2s;
+  }
+  #mainNav .nav-link:hover {
+    background: rgba(255,255,255,0.15);
+    color: #fff !important;
+  }
+  #mainNav .nav-link:active {
+    background: rgba(255,255,255,0.25);
+  }
+</style>
+<script>
+  // Manu bar scroll effect
+  const mainNav = document.getElementById('mainNav');
+  function updateNavBar() {
+    if (window.scrollY < 10) {
+      mainNav.classList.add('compact');
+      mainNav.style.top = "0";
+      mainNav.style.position = "relative";
+    } else {
+      mainNav.classList.remove('compact');
+      mainNav.style.top = "0";
+      mainNav.style.position = "sticky";
+    }
+  }
+  // Initial state
+  updateNavBar();
+  window.addEventListener('scroll', updateNavBar);
+</script>
+</body>
+</html>
