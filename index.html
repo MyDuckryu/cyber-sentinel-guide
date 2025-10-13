@@ -33,16 +33,27 @@
     </div>
   </header>
   <!-- Responsive Manu/Nav Bar -->
-  <nav id="mainNav" class="bg-white dark:bg-gray-700 dark:text-white shadow p-4 flex gap-4 z-50 transition-all duration-300 justify-center"
-    style="position: sticky; top: 0; left: 0; right: 0;">
-    <img src="logo.png" alt="Cyber Sentinel Logo" class="h-16 w-auto hover:scale-110 transition-transform duration-300 hidden" id="navLogo">
-    <div id="navLinks" class="flex gap-2 md:gap-4">
-      <a href="#ssh" class="nav-link text-blue-600 dark:text-blue-300 px-2 py-1 rounded transition-all duration-200 text-center">SSH</a>
-      <a href="#sql" class="nav-link text-blue-600 dark:text-blue-300 px-2 py-1 rounded transition-all duration-200 text-center">SQL</a>
-      <a href="#picoctf" class="nav-link text-blue-600 dark:text-blue-300 px-2 py-1 rounded transition-all duration-200 text-center">PicoCTF</a>
-      <a href="#virustotal" class="nav-link text-blue-600 dark:text-blue-300 px-2 py-1 rounded transition-all duration-200 text-center">Virustotal</a>
+  <nav id="mainNav" class="bg-white dark:bg-gray-700 dark:text-white shadow p-4 z-50 transition-all duration-300">
+  <div class="container mx-auto flex flex-wrap justify-between items-center">
+    <!-- Mobile Menu Button -->
+    <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path class="menu-open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        <path class="menu-close hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+
+    <!-- Navigation Links -->
+    <div id="navLinks" class="hidden md:flex w-full md:w-auto md:items-center mt-4 md:mt-0">
+      <div class="flex flex-col md:flex-row md:gap-4">
+        <a href="#ssh" class="nav-link py-2 md:py-1">SSH</a>
+        <a href="#sql" class="nav-link py-2 md:py-1">SQL</a>
+        <a href="#picoctf" class="nav-link py-2 md:py-1">PicoCTF</a>
+        <a href="#virustotal" class="nav-link py-2 md:py-1">VirusTotal</a>
+      </div>
     </div>
-  </nav>
+  </div>
+</nav>
 <!-- ssh topic -->
   <main class="p-6 space-y-12 flex justify-center">
     <div class="w-full max-w-4xl bg-white dark:bg-gray-200 rounded-lg shadow-lg p-6 border border-gray-300 dark:border-gray-700">

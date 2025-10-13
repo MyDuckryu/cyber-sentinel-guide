@@ -157,3 +157,28 @@ function scrollToSection(sectionId) {
     });
   }
 }
+
+// Add this to your existing JavaScript
+document.addEventListener('DOMContentLoaded', function() {
+  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+  const navLinks = document.getElementById('navLinks');
+  const menuOpen = mobileMenuBtn.querySelector('.menu-open');
+  const menuClose = mobileMenuBtn.querySelector('.menu-close');
+
+  mobileMenuBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('hidden');
+    menuOpen.classList.toggle('hidden');
+    menuClose.classList.toggle('hidden');
+  });
+
+  // Close menu when clicking a link on mobile
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth < 768) { // mobile breakpoint
+        navLinks.classList.add('hidden');
+        menuOpen.classList.remove('hidden');
+        menuClose.classList.add('hidden');
+      }
+    });
+  });
+});
