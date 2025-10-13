@@ -2,43 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Cyber Sentinel - A Beginner’s Guide to Cybersecurity</title>
-   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    // Enable dark mode support via class strategy
-    tailwind.config = {
-      darkMode: 'class'
-    };
-  </script>
-  <style>
-    html {scroll-behavior: smooth;
-    }
-    /* Custom background color */
-    .bg-gray-150 {
-      background-color: #f5f5f5; /* A light grey */
-    }
-    /* Fade-out animation for welcome modal */
-    .fade-out {
-      animation: fadeOut 0.5s forwards;
-    }
-    @keyframes fadeOut {
-      to {
-        opacity: 0;
-        transform: scale(0.95);
-        pointer-events: none;
-      }
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="logo.png">
+  <title>Cyber Sentinel</title>
+  <link rel="stylesheet" href="style.css"> <script src="https://cdn.tailwindcss.com"></script> <script src="script.js" defer></script>
 </head>
-<body class="bg-gray-150 dark:bg-black text-gray-800 dark:text-gray-300 font-sans transition-colors duration-300" id="body">
+<body class="bg-gray-250 text-gray-900 dark:bg-gray-999 dark:text-gray-100 font-sans transition-colors duration-300" id="body">
   <!-- Welcome Modal Overlay -->
   <div id="welcomeModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70">
     <div class="bg-white dark:bg-gray-900 rounded-lg shadow-lg p-8 max-w-md w-full text-center relative border border-blue-700">
+       <img src="logo.png" alt="Cyber Sentinel Logo" class="mx-auto w-64 md:w-80 h-auto filter drop-shadow-lg" style="filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.8));">
       <button id="closeWelcome" class="absolute top-3 right-3 text-gray-500 hover:text-blue-700 dark:hover:text-blue-300 text-2xl font-bold">&times;</button>
-      <h2 class="text-3xl font-bold text-blue-800 dark:text-blue-300 mb-4">Welcome to Cyber Sentinel!</h2>
       <p class="mb-4 text-gray-700 dark:text-gray-200">
-        Your beginner-friendly guide to cybersecurity.<br>
-        Explore SSH, SQL, and CTFs with easy explanations and practical tips.
+         <h2 class="text-3xl md:text-4xl text-blue font-serif font-light italic mb-10 text-shadow-custom leading-snug">
+                “Enhance your knowledge of Cybersecurity"
+            </h2>
       </p>
 
     </div>
@@ -54,7 +32,6 @@
       </button>
     </div>
   </header>
-  <!-- Manu -->
   <!-- Responsive Manu/Nav Bar -->
   <nav id="mainNav" class="bg-white dark:bg-gray-700 dark:text-white shadow p-4 flex gap-4 z-50 transition-all duration-300 justify-center"
     style="position: sticky; top: 0; left: 0; right: 0;">
@@ -255,8 +232,8 @@
           <li>~/.ssh/known_hosts: Saved server fingerprints.</li>
           <li>~/.ssh/authorized_keys (on server): Where your public key goes so the server knows you're allowed to log in.</li>
           <li>~/.ssh/id_rsa (etc.): Your private key (keep secret!).</li>
-       </ul>
-      <p>We recommend reading more from <a class="text-blue-600 underline" href="https://linux.die.net/man/1/ssh">ssh(1) - Linux man page</a></p>
+         <a class="ci-color-button inline-block font-bold py-1 px-1 rounded-md hover:scale-[0.975] transition shadow-2xl bg-blue-600 text-white hover:bg-blue-700" href="https://linux.die.net/man/1/ssh">SSH</a>
+   </ul>
 <br>
       <section id="sql">
         <main class="p-6 space-y-12 flex justify-center">
@@ -375,11 +352,9 @@
           <strong>Learn More about Prevention:</strong>Consult resources like the OWASP SQL Injection Prevention Cheat Sheet and PortSwigger Web Security Academy for hands-on learning.
         </li>
     </ul>
-      <p>We recommend reading more from <a class="text-blue-600 underline" href="https://www.w3schools.com/sql/">w3schools - SQL</a></p>
+      <p>We recommend reading more from <a class="ci-color-button inline-block font-bold py-1 px-1 rounded-md hover:scale-[0.975] transition shadow-2xl bg-blue-600 text-white hover:bg-blue-700" href="https://www.w3schools.com/sql/">SQL</a>
 <br>
 </pre>
-
-
       <section id="picoctf">
               <section id="sql">
         <main class="p-6 space-y-12 flex justify-center">
@@ -412,9 +387,10 @@
            <ul class="list-decimal list-inside ml-4">
         <h3 class="mt-4 font-semibold">Things to prepare</h3>
         <ul class="list-disc list-inside">
-          <li>picoCTF account(<a class="text-blue-600 underline" href="https://picoctf.org">picoctf.org</a>)</li>
-          <li>vscode(<a class="text-blue-600 underline" href="https://code.visualstudio.com/">visualstudio</a>)</li>
-          <li>Python, Wireshark, SSH, php,(Depends on the type of problem)</li>
+          <a class="ci-color-button inline-block font-bold py-3 px-6 rounded-md hover:scale-[0.975] transition shadow-2xl bg-blue-600 text-white hover:bg-blue-700" href="https://picoctf.org">
+            PicoCTF Account
+          </a>
+          <a class="ci-color-button inline-block font-bold py-3 px-6 rounded-md hover:scale-[0.975] transition shadow-2xl bg-blue-600 text-white hover:bg-blue-700" href="https://code.visualstudio.com/">Vscode</a>
         </ul>
         <h3 class="mt-4 font-semibold">Type of problem</h3>
         <ul class="list-disc list-inside">
@@ -444,168 +420,37 @@
            <ul class="list-decimal list-inside ml-4">
         <h3 class="mt-4 font-semibold">Use virustotal</h3>
         <ul class="list-disc list-inside">
-          <li>virustotal.(<a class="text-blue-600 underline" href="https://www.virustotal.com/gui/home/upload">virustotal.com</a>)</li>
+          <a class="ci-color-button inline-block font-bold py-3 px-6 rounded-md hover:scale-[0.975] transition shadow-2xl bg-blue-600 text-white hover:bg-blue-700" href="https://www.virustotal.com/gui/home/upload">Virustotal</a>
         </ul>
       </section>
     </div>
   </main>
-
-  <footer class="bg-gray-200 dark:bg-gray-900 dark:text-white text-center text-sm p-4 transition-colors duration-300">
-    by Nohn | © 2025 SecureZone
-  </footer>
-
-  <script>
-    const toggle = document.getElementById('toggleDark');
-    const body = document.getElementById('body');
-
-    toggle.addEventListener('click', () => {
-      body.classList.toggle('dark');
-      toggle.textContent = body.classList.contains('dark') ? '☀️ Light' : '🌙 Dark';
-    });
-
-    // Welcome Modal Logic
-    const welcomeModal = document.getElementById('welcomeModal');
-    const closeWelcome = document.getElementById('closeWelcome');
-    closeWelcome.addEventListener('click', () => {
-      welcomeModal.classList.add('fade-out');
-      setTimeout(() => {
-        welcomeModal.style.display = 'none';
-        welcomeModal.classList.remove('fade-out');
-      }, 500);
-    });
-    // Optional: Close modal with Escape key
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        welcomeModal.classList.add('fade-out');
-        setTimeout(() => {
-          welcomeModal.style.display = 'none';
-          welcomeModal.classList.remove('fade-out');
-        }, 500);
-      }
-    });
-  </script>
-  <style>
-  /* Manu bar compact style */
-  #mainNav.compact {
-    justify-content: center !important;
-    background: rgba(30, 58, 138, 0.95);
-    box-shadow: 0 4px 24px rgba(30,58,138,0.10);
-    border-radius: 9999px;
-    width: fit-content;
-    min-width: 240px;
-    max-width: 80vw;
-    margin: 0.5rem auto 0 auto;
-    padding: 0.4rem 1.5rem;
-    left: 0;
-    right: 0;
-    position: relative;
-    top: 0;
-    z-index: 60;
-    transition: 
-      border-radius 0.5s cubic-bezier(.4,0,.2,1),
-      width 0.5s cubic-bezier(.4,0,.2,1),
-      margin 0.5s cubic-bezier(.4,0,.2,1),
-      background 0.5s cubic-bezier(.4,0,.2,1),
-      box-shadow 0.5s cubic-bezier(.4,0,.2,1),
-      left 0.5s cubic-bezier(.4,0,.2,1),
-      right 0.5s cubic-bezier(.4,0,.2,1),
-      top 0.5s cubic-bezier(.4,0,.2,1),
-      padding 0.5s cubic-bezier(.4,0,.2,1),
-      justify-content 0.5s cubic-bezier(.4,0,.2,1);
-  }
-  #mainNav.compact #navLinks {
-    gap: 0.4rem;
-  }
-  #mainNav.compact .nav-link {
-    background: #fff;
-    color: #1e3a8a !important;
-    border-radius: 9999px;
-    font-weight: 600;
-    min-width: 44px;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    padding-top: 0.35rem;
-    padding-bottom: 0.35rem;
-    font-size: 1rem;
-    box-shadow: 0 2px 8px rgba(30,58,138,0.08);
-    transition: background 0.2s, color 0.2s;
-  }
-  #mainNav.compact .nav-link:hover {
-    background: #2563eb;
-    color: #fff !important;
-  }
-  #mainNav.compact #navLogo {
-    display: none !important;
-  }
-  /* Spread out style (default, long elliptical wave, smaller and symmetrical) */
-  #mainNav {
-    border-radius: 9999px;
-    margin: 0.5rem auto 0 auto;
-    width: 70vw;
-    max-width: 900px;
-    min-width: 240px;
-    position: sticky;
-    top: 0;
-    left: 0;
-    right: 0;
-    justify-content: flex-start;
-    background: linear-gradient(90deg, #1e3a8a 0%, #2563eb 100%);
-    box-shadow: 0 4px 24px rgba(30,58,138,0.10);
-    padding: 0.4rem 1.5rem;
-    z-index: 60;
-    transition: 
-      border-radius 0.5s cubic-bezier(.4,0,.2,1),
-      width 0.5s cubic-bezier(.4,0,.2,1),
-      margin 0.5s cubic-bezier(.4,0,.2,1),
-      background 0.5s cubic-bezier(.4,0,.2,1),
-      box-shadow 0.5s cubic-bezier(.4,0,.2,1),
-      left 0.5s cubic-bezier(.4,0,.2,1),
-      right 0.5s cubic-bezier(.4,0,.2,1),
-      top 0.5s cubic-bezier(.4,0,.2,1),
-      padding 0.5s cubic-bezier(.4,0,.2,1),
-      justify-content 0.5s cubic-bezier(.4,0,.2,1);
-  }
-  #mainNav #navLogo {
-    display: block;
-  }
-  #mainNav .nav-link {
-    background: transparent;
-    color: #fff !important;
-    border-radius: 9999px;
-    font-weight: 500;
-    min-width: 44px;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    padding-top: 0.35rem;
-    padding-bottom: 0.35rem;
-    font-size: 1rem;
-    transition: background 0.2s, color 0.2s;
-  }
-  #mainNav .nav-link:hover {
-    background: rgba(255,255,255,0.15);
-    color: #fff !important;
-  }
-  #mainNav .nav-link:active {
-    background: rgba(255,255,255,0.25);
-  }
-</style>
-<script>
-  // Manu bar scroll effect
-  const mainNav = document.getElementById('mainNav');
-  function updateNavBar() {
-    if (window.scrollY < 10) {
-      mainNav.classList.add('compact');
-      mainNav.style.top = "0";
-      mainNav.style.position = "relative";
-    } else {
-      mainNav.classList.remove('compact');
-      mainNav.style.top = "0";
-      mainNav.style.position = "sticky";
-    }
-  }
-  // Initial state
-  updateNavBar();
-  window.addEventListener('scroll', updateNavBar);
-</script>
+<footer class="bg-blue-900 dark:bg-gray-900 dark:text-white p-4 transition-colors duration-300">
+  <div class="container mx-auto flex flex-col items-start"> 
+    <div class="flex items-center">
+      <img src="Footerlogo.png" alt="Cyber Sentinel Logo" class="custom-logo-size mr-4">
+    </div>
+    <div class="text-sm text-white mt-2">
+      An educational website offering cybersecurity resources and tutorials for beginners
+    </div>
+  </div>
+</footer>
+<!-- Place this just before </body> -->
+<div id="settingsContainer" class="fixed top-4 right-6 z-50 flex flex-col items-end">
+  <button id="settingsBtn" aria-label="Settings"
+  class="bg-white dark:bg-gray-800 rounded-full p-3 shadow-lg border border-gray-300 dark:border-gray-700 transition hover:bg-gray-100 dark:hover:bg-gray-700"
+  style="outline: none;">
+  <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#007aff" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" id="settingsIcon" class="transition-transform duration-500">
+    <path d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065z"/>
+    <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"/>
+  </svg>
+</button>
+  <div id="settingsDropdown" class="settings-dropdown hidden bg-white dark:bg-gray-900 rounded-lg shadow-lg mt-2 py-4 px-6 border border-blue-700"
+    style="min-width: 180px;">
+    <button id="toggleDarkDropdown" class="w-full bg-gray-100 dark:bg-gray-700 text-blue-900 dark:text-white px-3 py-2 rounded hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-200 text-left">
+      🌙 Dark Mode
+    </button>
+  </div>
+</div>
 </body>
 </html>

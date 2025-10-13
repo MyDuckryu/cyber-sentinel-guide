@@ -1,0 +1,255 @@
+.ci-color-button {
+  background: #005da8; 
+  color: #ffffff;         
+}
+.ci-color-button:hover {
+  background: #0096d1;
+  transform: scale(0.975);
+}
+.ci-color-button:focus {
+  outline: 3px solid rgba(0, 110, 255, 0.555);
+}
+
+/* Can be inserted into CSS (style.css or <style> in index.html) */
+
+/* Make the menu bar slightly transparent */
+#mainNav {
+  background: rgba(30, 58, 138, 0.85) !important; /* semi-transparent blue */
+  box-shadow: 0 4px 24px rgba(30,58,138,0.10);
+  transition: all 0.3s ease;
+}
+
+/* Nav link default style */
+#mainNav .nav-link {
+  background: transparent;
+  color: #fff !important;
+  border-radius: 9999px;
+  font-weight: 500;
+  min-width: 44px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.35rem;
+  padding-bottom: 0.35rem;
+  font-size: 1rem;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+  border: 2px solid transparent;
+}
+
+/* Nav link hover style */
+#mainNav .nav-link:hover {
+  background: rgba(255,255,255,0.15);
+  color: #fff !important;
+}
+
+/* Nav link active style (transparent frame + yellow text) */
+#mainNav .nav-link.active {
+  border: 2px solid rgba(255,255,255,0.35); /* transparent frame */
+  background: rgba(255,255,255,0.10);       /* subtle highlight */
+  color: #ffd600 !important;                /* yellow text */
+  box-shadow: 0 0 0 2px rgba(255,255,255,0.15);
+}
+
+/* Optional: On hover, keep yellow text if active */
+#mainNav .nav-link.active:hover {
+  color: #ffd600 !important;
+  background: rgba(255,255,255,0.18);
+}
+
+    html {scroll-behavior: smooth;
+    }
+    /* Custom background color */
+    .bg-gray-150 {
+      background-color: #f5f5f5; /* A light grey */
+    }
+    /* Fade-out animation for welcome modal */
+    .fade-out {
+      animation: fadeOut 0.5s forwards;
+    }
+    @keyframes fadeOut {
+      to {
+        opacity: 0;
+        transform: scale(0.95);
+        pointer-events: none;
+      }
+    }
+
+/* Manu bar compact style */
+  #mainNav.compact {
+    justify-content: center !important;
+    background: rgba(30, 58, 138, 0.95);
+    box-shadow: 0 4px 24px rgba(30,58,138,0.10);
+    border-radius: 9999px;
+    width: fit-content;
+    min-width: 240px;
+    max-width: 80vw;
+    margin: 0.5rem auto 0 auto;
+    padding: 0.4rem 1.5rem;
+    left: 0;
+    right: 0;
+    position: relative;
+    top: 0;
+    z-index: 60;
+    transition: 
+      border-radius 0.5s cubic-bezier(.4,0,.2,1),
+      width 0.5s cubic-bezier(.4,0,.2,1),
+      margin 0.5s cubic-bezier(.4,0,.2,1),
+      background 0.5s cubic-bezier(.4,0,.2,1),
+      box-shadow 0.5s cubic-bezier(.4,0,.2,1),
+      left 0.5s cubic-bezier(.4,0,.2,1),
+      right 0.5s cubic-bezier(.4,0,.2,1),
+      top 0.5s cubic-bezier(.4,0,.2,1),
+      padding 0.5s cubic-bezier(.4,0,.2,1),
+      justify-content 0.5s cubic-bezier(.4,0,.2,1);
+  }
+  #mainNav.compact #navLinks {
+    gap: 0.4rem;
+  }
+  #mainNav.compact .nav-link {
+    background: #fff;
+    color: #1e3a8a !important;
+    border-radius: 9999px;
+    font-weight: 600;
+    min-width: 44px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.35rem;
+    padding-bottom: 0.35rem;
+    font-size: 1rem;
+    box-shadow: 0 2px 8px rgba(30,58,138,0.08);
+    transition: background 0.2s, color 0.2s;
+  }
+  #mainNav.compact .nav-link:hover {
+    background: #2563eb;
+    color: #fff !important;
+  }
+  #mainNav.compact #navLogo {
+    display: none !important;
+  }
+  /* Spread out style (default, long elliptical wave, smaller and symmetrical) */
+  #mainNav {
+    border-radius: 9999px;
+    margin: 0.5rem auto 0 auto;
+    width: 65vw;
+    max-width: 423px;
+    min-width: 240px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    justify-content: flex-start;
+    background: linear-gradient(90deg, #1e3a8a 0%);
+    box-shadow: 0 4px 24px rgba(30,58,138,0.10);
+    padding: 0.4rem 1.5rem;
+    z-index: 60;
+    transition: 
+      border-radius 0.5s cubic-bezier(.4,0,.2,1),
+      width 0.5s cubic-bezier(.4,0,.2,1),
+      margin 0.5s cubic-bezier(.4,0,.2,1),
+      background 0.5s cubic-bezier(.4,0,.2,1),
+      box-shadow 0.5s cubic-bezier(.4,0,.2,1),
+      left 0.5s cubic-bezier(.4,0,.2,1),
+      right 0.5s cubic-bezier(.4,0,.2,1),
+      top 0.5s cubic-bezier(.4,0,.2,1),
+      padding 0.5s cubic-bezier(.4,0,.2,1),
+      justify-content 0.5s cubic-bezier(.4,0,.2,1);
+  }
+  #mainNav .nav-link {
+    background: transparent;
+    color: #fff !important;
+    border-radius: 9999px;
+    font-weight: 500;
+    min-width: 44px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.35rem;
+    padding-bottom: 0.35rem;
+    font-size: 1rem;
+    transition: background 0.2s, color 0.2s;
+  }
+  #mainNav .nav-link:hover {
+    background: rgba(255,255,255,0.15);
+    color: #fff !important;
+  }
+  #mainNav .nav-link:active {
+    background: rgba(255,255,255,0.25);
+  }
+
+.settings-dropdown {
+    opacity: 0;
+    transform: translateY(-16px);
+    transition: opacity 0.35s cubic-bezier(.4,0,.2,1), transform 0.35s cubic-bezier(.4,0,.2,1);
+    pointer-events: none;
+    display: block;
+  }
+  .settings-dropdown.open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+  .settings-dropdown.hidden {
+    opacity: 0;
+    transform: translateY(-16px);
+    pointer-events: none;
+  }
+  .rotate-gear {
+    animation: rotateGear 0.5s cubic-bezier(.4,0,.2,1);
+  }
+  .rotate-gear-reverse {
+    animation: rotateGearReverse 0.5s cubic-bezier(.4,0,.2,1);
+  }
+  @keyframes rotateGear {
+    from { transform: rotate(0deg);}
+    to { transform: rotate(180deg);}
+  }
+  @keyframes rotateGearReverse {
+    from { transform: rotate(180deg);}
+    to { transform: rotate(0deg);}
+  }
+    .hero-background {
+        background-color: #0b0b0b;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('your-background-image.jpg');
+        background-size: cover;
+        background-position: center;
+        min-height: calc(100vh - 88px);
+    }
+    .text-shadow-custom {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+    .btn-primary {
+        padding-left: 2rem;    
+        padding-right: 2rem;  
+        padding-bottom: 0.75rem;
+        border-radius: 0.375rem; 
+        font-weight: 700; 
+        transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter; /* transition-colors */
+        transition-duration: 200ms;
+    }
+
+    .btn-login {
+        background-color: #ffffff;
+        color: #1f2937;
+    }
+    .btn-login:hover {
+        background-color: #e5e7eb;
+    }
+
+    .btn-learn {
+        background-color: rgba(0, 0, 0, 0.7);
+        color: #fbbf24;
+        border: 1px solid #fbbf24;
+    }
+    .btn-learn:hover {
+        background-color: #fbbf24;
+        color: #000000;
+    }
+.custom-logo-size {
+    height: 60px;
+    width: 150px;
+}
+
+/* Add backdrop blur effect for menu bar */
+#mainNav.scrolled {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background: rgba(30, 58, 138, 0.85) !important;
+}
