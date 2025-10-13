@@ -23,4 +23,4 @@ https://myduckryu.github.io/cyber-sentinel-guide/
 - Vanilla JavaScript
 
 ## 🧑‍💻 Author
-Nohn | © 2025 SecureZone
+Nohn | © 2025
