@@ -24,12 +24,9 @@
   <header class="bg-blue-900 dark:bg-gray-800 text-white p-6 relative">
     <div class="flex justify-between items-center">
       <div>
-        <h1 class="text-4xl font-bold">Cyber Sentinel</h1>
-        <p class="text-lg mt-2 text-gray-300">An educational website offering cybersecurity resources and tutorials for beginners</p>
+        <h1 class="text-4xl font-bold" data-i18n="title">Cyber Sentinel</h1>
+        <p class="text-lg mt-2 text-gray-300" data-i18n="subtitle">An educational website offering cybersecurity resources and tutorials for beginners</p>
       </div>
-      <button id="toggleDark" class="bg-white dark:bg-gray-700 text-blue-900 dark:text-white px-3 py-1 rounded hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-200">
-        🌙 Dark
-      </button>
     </div>
   </header>
   <!-- Responsive Manu/Nav Bar -->
@@ -57,7 +54,7 @@
 <!-- ssh topic -->
   <main class="p-6 space-y-12 flex justify-center">
     <div class="w-full max-w-4xl bg-white dark:bg-gray-200 rounded-lg shadow-lg p-6 border border-gray-300 dark:border-gray-700">
-      <section id="ssh">
+      <section class="content-section" id="ssh">
         <div class="text-center">
            <div class="w-full max-w-4xl bg-white dark:bg-gray-200 rounded-lg shadow-lg p-6 border border-gray-300 dark:border-gray-700">
           <h1 class="text-3xl font-semibold text-blue-800 dark:text-blue-300"><b>Elaborating on SSH</b><br></h1>
@@ -246,7 +243,7 @@
          <a class="ci-color-button inline-block font-bold py-1 px-1 rounded-md hover:scale-[0.975] transition shadow-2xl bg-blue-600 text-white hover:bg-blue-700" href="https://linux.die.net/man/1/ssh">SSH</a>
    </ul>
 <br>
-      <section id="sql">
+      <section class="content-section" id="sql">
         <main class="p-6 space-y-12 flex justify-center">
         <div class="text-center">
            <div class="w-full max-w-4xl bg-white dark:bg-gray-200 rounded-lg shadow-lg p-6 border border-gray-300 dark:border-gray-700">
@@ -257,7 +254,7 @@
 </section>
         <!-- explain ssh -->
         <h2 class="mt-4 font-semibold text-gray-500"><strong>Key Components of SQL 🔑</strong></h2>
-        <ul class="list-disc list-inside">
+        <ul class="content-section" class="list-disc list-inside">
           <li><strong>SDatabase:</strong>A structured collection of data, like a digital filing cabinet.</li>
           <li><strong>Table:</strong>Where data is actually stored within a database, organized into rows and columns (like a spreadsheet).</li>
           <li><strong>Row (Record):</strong> A single entry or record in a table (e.g., one customer's details).</li>
@@ -269,7 +266,7 @@
         <ul class="list-disc list-inside">
           To write and run SQL, you typically use a Database Management System (DBMS) or a SQL Client.
           <li>
-<!-- Tool 1: Termius -->
+  <!-- Tool 1: Termius -->
             <strong>1. Online SQL Editors (No Installation Required!)</strong>
             <ul class="list-disc list-inside ml-6 text-sm text-gray-700">
               <li>
@@ -366,8 +363,7 @@
       <p>We recommend reading more from <a class="ci-color-button inline-block font-bold py-1 px-1 rounded-md hover:scale-[0.975] transition shadow-2xl bg-blue-600 text-white hover:bg-blue-700" href="https://www.w3schools.com/sql/">SQL</a>
 <br>
 </pre>
-      <section id="picoctf">
-              <section id="sql">
+      <section class="content-section" id="picoctf">
         <main class="p-6 space-y-12 flex justify-center">
         <div class="text-center">
            <div class="w-full max-w-4xl bg-white dark:bg-gray-200 rounded-lg shadow-lg p-6 border border-gray-300 dark:border-gray-700">
@@ -376,7 +372,7 @@
         </div>
       </div>
 </section>
-         <ul class="list-disc list-inside">
+         <ul class="content-section" class="list-disc list-inside">
           <li><strong>What is a CTF?</strong>CTF stands for "Capture The Flag." In cybersecurity, CTFs are competitive games where participants (individuals or teams) solve various challenges to find hidden "flags." These flags are usually unique strings of text (e.g., picoCTF{th1s_is_4_fl4g}).</li>
           <li><strong>What is picoCTF specifically?</strong>picoCTF is a free, online cybersecurity competition specifically designed for beginners. It's created by experts at Carnegie Mellon University (CMU) and is often used by high school and college students, but anyone interested in learning cybersecurity can participate.</li>
           <li><strong>What's its purpose?</strong>The main goal of picoCTF is to teach cybersecurity skills in a fun, hands-on way. Instead of just reading textbooks, you get to apply concepts by solving real-world-like problems. It helps you explore different areas of cybersecurity.</li>
@@ -411,7 +407,7 @@
           <li>Forensics</li>
         </ul>
       </section>
-      <section id="virustotal">
+      <section class="content-section" id="virustotal">
         <main class="p-6 space-y-12 flex justify-center">
         <div class="text-center">
            <div class="w-full max-w-4xl bg-white dark:bg-gray-200 rounded-lg shadow-lg p-6 border border-gray-300 dark:border-gray-700">
@@ -420,7 +416,7 @@
         </div>
       </div>
 </section>
-         <ul class="list-disc list-inside">
+         <ul class="content-section" class="list-disc list-inside">
            <li><strong>How does it work?</strong></li>
            <ul class="list-disc list-inside ml-6 text-sm text-gray-700">
           <li><strong>1.You Upload or Submit:</strong>You find a suspicious file, a strange link (URL), or an IP address that you're worried about. You go to the VirusTotal website and upload the file or paste the link/address into the search bar.</li>
@@ -460,6 +456,9 @@
     style="min-width: 180px;">
     <button id="toggleDarkDropdown" class="w-full bg-gray-100 dark:bg-gray-700 text-blue-900 dark:text-white px-3 py-2 rounded hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-200 text-left">
       🌙 Dark Mode
+    </button>
+    <button id="toggleLanguage" class="w-full bg-gray-100 dark:bg-gray-700 text-blue-900 dark:text-white px-3 py-2 rounded hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-200 text-left">
+      🌐 English
     </button>
   </div>
 </div>
